@@ -45,6 +45,7 @@ const Home: NextPage = () => {
       handleJoin(invite, connectedAddress);
       router.replace(pathname, { scroll: false });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [invite, connectedAddress]);
 
   return (

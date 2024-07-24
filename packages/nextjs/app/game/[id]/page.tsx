@@ -49,6 +49,7 @@ const GamePage = () => {
         setGame(gameState);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlayer]);
 
   useEffect(() => {
