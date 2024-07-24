@@ -1,7 +1,7 @@
 import { ablyRealtime } from "./socket";
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI as string;
 
 const connectdb = async () => {
   const connectionState = mongoose.connection.readyState;
@@ -19,7 +19,7 @@ const connectdb = async () => {
   try {
     await ablyRealtime.connection.once("connected");
     ablyRealtime.channels.get(`gameUpdate`);
-    await mongoose.connect(MONGODB_URI!, {
+    await mongoose.connect(MONGODB_URI, {
       dbName: "scribblepics",
       bufferCommands: false,
     });
